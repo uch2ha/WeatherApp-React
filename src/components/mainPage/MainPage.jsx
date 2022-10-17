@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ErrorMessages from '../errorMessages/ErrorMessages';
 import ScrollableCityCards from '../scrollableCityCards/ScrollableCityCards';
 import './MainPage.css';
 
@@ -66,19 +67,13 @@ const MainPage = () => {
         setData(newCityList);
     };
 
-    console.log(data);
-
     return (
         <div className='main-container'>
-            {otherError && <div className='error-message'>OTHER ERROR</div>}
-            {locationKeyError && (
-                <div className='error-message'>LOCATION KEY ERROR</div>
-            )}
-            {duplicateCitiesError && (
-                <div className='error-message'>
-                    This city is already existed
-                </div>
-            )}
+            <ErrorMessages
+                otherError={otherError}
+                locationKeyError={locationKeyError}
+                duplicateCitiesError={duplicateCitiesError}
+            />
             <div className='search-bar'>
                 <input
                     value={cityName}
