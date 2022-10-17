@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CityCard from '../cityCard/CityCard';
+import ScrollableCityCards from '../scrollableCityCards/ScrollableCityCards';
 import './MainPage.css';
 
 const API_KEY = '?apikey=ExIw1Hbp9pDy8DN7PdxLtPsTi8NYGGlS';
@@ -13,7 +13,8 @@ const WEATHER_API =
 const MainPage = () => {
     const [data, setData] = useState([]);
     const [cityName, setCityName] = useState('');
-    const [locationKeyError, setLocationKeyError] = useState(false); // add 2 errotr????
+    const [locationKeyError, setLocationKeyError] = useState(false);
+    const [otherError, setOtherError] = useState(false);
 
     const getLocationKeyFromAPI = () => {
         return fetch(LOCATION_KEY_API + API_KEY + '&q=' + cityName)
@@ -29,9 +30,10 @@ const MainPage = () => {
         return fetch(WEATHER_API + key + API_KEY)
             .then((response) => response.json())
             .then((responseData) => {
+                setOtherError(false);
                 return responseData;
             })
-            .catch(() => setLocationKeyError(true));
+            .catch(() => setOtherError(true));
     };
 
     const setCityWeatherData = async () => {
@@ -41,6 +43,7 @@ const MainPage = () => {
             cityData = await getWeatherDataFromAPI(locationKey);
         }
         if (cityData) {
+            cityData['id'] = Date.now(); // add id to each element  in the array
             cityData['City'] = cityName;
             await setData((prev) => [...prev, cityData]);
             setCityName('');
@@ -49,6 +52,10 @@ const MainPage = () => {
 
     return (
         <div className='main-container'>
+            {otherError && <div className='error-message'>OTHER ERROR</div>}
+            {locationKeyError && (
+                <div className='error-message'>LOCATION KEY ERROR</div>
+            )}
             <div className='search-bar'>
                 <input
                     value={cityName}
@@ -57,11 +64,7 @@ const MainPage = () => {
                 />
                 <button onClick={() => setCityWeatherData()}>Find</button>
             </div>
-            <div className='citys-card-container'>
-                <CityCard />
-                <CityCard />
-                <CityCard />
-            </div>
+            <ScrollableCityCards />
         </div>
     );
 };
