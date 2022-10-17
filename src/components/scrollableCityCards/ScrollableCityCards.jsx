@@ -3,7 +3,7 @@ import './ScrollableCityCards.css';
 import CityCard from '../cityCard/CityCard';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
-const ScrollableCityCards = () => {
+const ScrollableCityCards = ({ data, deleteCityFromData }) => {
     const slideLeft = () => {
         let slider = document.getElementById('scrollable');
         slider.scrollLeft = slider.scrollLeft - 500;
@@ -18,23 +18,16 @@ const ScrollableCityCards = () => {
         <div className='scrollable-container'>
             <MdChevronLeft size={40} onClick={slideLeft} />
             <div id='scrollable' className='citys-cards-container'>
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
+                {data.map((city) => (
+                    <CityCard
+                        key={city?.id}
+                        city={city?.City}
+                        day={city?.Day}
+                        temperature={city?.Temperature}
+                        deleteCity={deleteCityFromData}
+                        id={city?.id}
+                    />
+                ))}
             </div>
             <MdChevronRight size={40} onClick={slideRight} />
         </div>

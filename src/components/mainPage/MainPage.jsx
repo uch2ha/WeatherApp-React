@@ -15,6 +15,7 @@ const MainPage = () => {
     const [cityName, setCityName] = useState('');
     const [locationKeyError, setLocationKeyError] = useState(false);
     const [otherError, setOtherError] = useState(false);
+    const [duplicateCitiesError, setDuplicateCitiesError] = useState(false);
 
     const getLocationKeyFromAPI = () => {
         return fetch(LOCATION_KEY_API + API_KEY + '&q=' + cityName)
@@ -31,17 +32,27 @@ const MainPage = () => {
             .then((response) => response.json())
             .then((responseData) => {
                 setOtherError(false);
-                return responseData;
+                setDuplicateCitiesError(false);
+                console.log(responseData);
+                return responseData.DailyForecasts[0];
             })
             .catch(() => setOtherError(true));
     };
 
     const setCityWeatherData = async () => {
-        const locationKey = await getLocationKeyFromAPI();
+        let locationKey = await getLocationKeyFromAPI();
+        data.forEach((city) => {
+            if (city.City === cityName) {
+                locationKey = undefined; // don't let add duplicates cities
+                setDuplicateCitiesError(true);
+                setCityName('');
+            }
+        });
         let cityData = '';
         if (locationKey !== undefined) {
             cityData = await getWeatherDataFromAPI(locationKey);
         }
+
         if (cityData) {
             cityData['id'] = Date.now(); // add id to each element  in the array
             cityData['City'] = cityName;
@@ -50,11 +61,23 @@ const MainPage = () => {
         }
     };
 
+    const deleteCityFromData = (id) => {
+        const newCityList = data.filter((city) => city.id !== id);
+        setData(newCityList);
+    };
+
+    console.log(data);
+
     return (
         <div className='main-container'>
             {otherError && <div className='error-message'>OTHER ERROR</div>}
             {locationKeyError && (
                 <div className='error-message'>LOCATION KEY ERROR</div>
+            )}
+            {duplicateCitiesError && (
+                <div className='error-message'>
+                    This city is already existed
+                </div>
             )}
             <div className='search-bar'>
                 <input
@@ -64,7 +87,12 @@ const MainPage = () => {
                 />
                 <button onClick={() => setCityWeatherData()}>Find</button>
             </div>
-            <ScrollableCityCards />
+            {data?.length > 0 && (
+                <ScrollableCityCards
+                    data={data}
+                    deleteCityFromData={deleteCityFromData}
+                />
+            )}
         </div>
     );
 };

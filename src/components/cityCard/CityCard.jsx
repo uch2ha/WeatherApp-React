@@ -1,13 +1,14 @@
 import React from 'react';
 import './CityCard.css';
 
-const CityCard = () => {
+const CityCard = ({ city, day, temperature, deleteCity, id }) => {
     return (
         <div className='card-container'>
-            <p>Name</p>
+            <p>{city}</p>
             <p>7C</p>
             <p>img</p>
-            <p>light rain</p>
+            <p>{day?.IconPhrase}</p>
+            <button onClick={() => deleteCity(id)}>del</button>
         </div>
     );
 };
