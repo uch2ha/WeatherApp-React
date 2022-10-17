@@ -1,7 +1,62 @@
 .card-container {
     background: blue;
-    width: 5rem;
-    height: 10rem;
-    padding: 1rem;
+    min-width: 25rem;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
     margin: 1rem;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.title p {
+    margin: 1rem;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.day-night {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-night div {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.day-night div p {
+    white-space: normal;
+}
+
+.day-night-title {
+    font-weight: 600;
+}
+
+.min-max {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.min-max div {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    position: relative;
 }
