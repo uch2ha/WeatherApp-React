@@ -20,7 +20,7 @@
 }
 
 .input-field {
-    border: 2px solid red;
+    border: 2px solid rgb(255, 201, 157);
     background: transparent;
     font-size: 2rem;
     padding: 0.75rem;
@@ -35,9 +35,18 @@
 
 .btn-search {
     background-color: transparent;
-    border: 2px solid red;
+    border: 2px solid rgb(255, 201, 157);
     border-radius: 15px;
     font-size: 1.5rem;
     padding: 0.75rem;
     cursor: pointer;
+    color: rgb(255, 201, 157);
+}
+
+.input-field:hover {
+    box-shadow: 0px 0px 7.5px 4px white;
+}
+
+.btn-search:hover {
+    box-shadow: 0px 0px 7.5px 4px white;
 }
