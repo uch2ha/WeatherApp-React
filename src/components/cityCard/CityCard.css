@@ -16,26 +16,26 @@
     margin: 1rem;
     margin-left: 1.5rem;
     text-transform: capitalize;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .day-night-title {
     font-size: 2rem;
     margin: 1rem;
     margin-left: 1.5rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .temperature {
     font-size: 2rem;
     margin: 1rem;
     margin-left: 1.5rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 .img-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 
 .img {
@@ -48,13 +48,9 @@
     margin: 1rem;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    font-weight: bold;
+    font-weight: 600;
     white-space: normal;
     min-height: 8rem;
-}
-
-.day-night-title {
-    font-weight: 600;
 }
 
 .btn {
