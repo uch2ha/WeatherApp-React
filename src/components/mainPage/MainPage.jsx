@@ -56,7 +56,7 @@ const MainPage = () => {
 
     const setCityWeatherData = async () => {
         let locationKey = await getLocationKeyFromAPI();
-        data.forEach((city) => {
+        data?.forEach((city) => {
             if (city.City === cityName) {
                 locationKey = undefined; // don't let add duplicates cities
                 setDuplicateCitiesError(true);
