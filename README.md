@@ -28,11 +28,11 @@
 
 -   If you click on the card, it will turn and you will see the night weather forecast for that city
 
-![Main Page with data](public/images/screenshot_4.png)
+![Main Page list of cities](public/images/screenshot_4.png)
 
 -   If you will try to add a city that is already on the list or try to add a non-existent city, you will get an error message
 
-![Main Page with data](public/images/screenshot_3.png)
+![Main Page error](public/images/screenshot_3.png)
 
 ## Device support
 
@@ -40,11 +40,11 @@
 
 -   Tablets
 
-![Main Page with data](public/images/screenshot_5.png)
+![Main Page tablet](public/images/screenshot_5.png)
 
 -   Phones
 
-![Main Page with data](public/images/screenshot_6.png)
+![Main Page phone](public/images/screenshot_6.png)
 
 ## Warning
 
