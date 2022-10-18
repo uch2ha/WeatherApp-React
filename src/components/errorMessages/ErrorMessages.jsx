@@ -1,4 +1,5 @@
 import React from 'react';
+import './ErrorMessages.css';
 
 const ErrorMessages = ({
     otherError,
@@ -7,14 +8,12 @@ const ErrorMessages = ({
 }) => {
     return (
         <>
-            {otherError && <div className='error-message'>OTHER ERROR</div>}
+            {otherError && <div className='error-message'>ERROR</div>}
             {locationKeyError && (
-                <div className='error-message'>LOCATION KEY ERROR</div>
+                <div className='error-message'>city not found</div>
             )}
             {duplicateCitiesError && (
-                <div className='error-message'>
-                    This city is already existed
-                </div>
+                <div className='error-message'>this city is already added</div>
             )}
         </>
     );
