@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CityCard.css';
 import img1 from '../../assets/img/1.png';
 import img2 from '../../assets/img/2.png';
@@ -88,6 +88,8 @@ const IMAGES = [
 ];
 
 const CityCard = ({ city, day, night, temperature, deleteCity, id }) => {
+    const [isDayData, setIsDayData] = useState(true);
+
     const fromFtoC = (F) => {
         return ((F - 32) * 5) / 9;
     };
@@ -97,9 +99,17 @@ const CityCard = ({ city, day, night, temperature, deleteCity, id }) => {
     };
 
     return (
-        <div className='card-container'>
+        <div
+            className='card-container'
+            onClick={() => setIsDayData((prev) => !prev)}
+        >
             <p className='city-name'>{city}</p>
-            <p className='day-night-title'>Day</p>
+            {isDayData ? (
+                <p className='day-night-title'>Day</p>
+            ) : (
+                <p className='day-night-title'>Night</p>
+            )}
+
             <p className='temperature'>
                 {getAvgTemperature(
                     temperature.Maximum.Value,
@@ -107,12 +117,28 @@ const CityCard = ({ city, day, night, temperature, deleteCity, id }) => {
                 )}
                 ° C
             </p>
-            <div className='img-container'>
-                <img className='img' src={IMAGES[day.Icon - 1]} />
-            </div>
-            <p className='description'>{day?.IconPhrase}</p>
+            {isDayData ? (
+                <>
+                    <div className='img-container'>
+                        <img className='img' src={IMAGES[day.Icon - 1]} />
+                    </div>
+                </>
+            ) : (
+                <>
+                    <div className='img-container'>
+                        <img className='img' src={IMAGES[night.Icon - 1]} />
+                    </div>
+                </>
+            )}
+            {isDayData ? (
+                <p className='description'>{day?.IconPhrase}</p>
+            ) : (
+                <p className='description'>{night?.IconPhrase}</p>
+            )}
             <button className='btn-delete' onClick={() => deleteCity(id)}>
-                <GrClose />
+                <div className='btn-div'>
+                    <GrClose />
+                </div>
             </button>
         </div>
     );
