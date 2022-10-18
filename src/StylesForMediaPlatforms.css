@@ -1,0 +1,44 @@
+/* MEDIA PLATFORMS (MEDIUM) */
+@media screen and (max-width: 1024px) {
+    .arrow-btn {
+        font-size: 4rem;
+    }
+}
+
+/* MEDIA PLATFORMS (SMALL) */
+@media screen and (max-width: 600px) {
+    .arrow-btn {
+        display: none;
+    }
+    .search-bar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .input-field {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+
+    .scrollable-container {
+        padding-top: 0;
+        /* padding-left: 4rem; */
+    }
+
+    .error-message {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+}
+
+/* MEDIA PLATFORMS (EXTRA SMALL) */
+@media screen and (max-width: 385px) {
+    .arrow-btn {
+        display: none;
+    }
+    .main-container {
+        height: 100%;
+    }
+}

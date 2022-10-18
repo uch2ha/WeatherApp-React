@@ -16,11 +16,7 @@ const ScrollableCityCards = ({ data, deleteCityFromData }) => {
 
     return (
         <div className='scrollable-container'>
-            <MdChevronLeft
-                className='arrow-btn'
-                size={50}
-                onClick={slideLeft}
-            />
+            <MdChevronLeft className='arrow-btn' onClick={slideLeft} />
             <div id='scrollable' className='cities-cards-container'>
                 {data.map((city) => (
                     <CityCard
@@ -34,11 +30,7 @@ const ScrollableCityCards = ({ data, deleteCityFromData }) => {
                     />
                 ))}
             </div>
-            <MdChevronRight
-                className='arrow-btn'
-                size={50}
-                onClick={slideRight}
-            />
+            <MdChevronRight className='arrow-btn' onClick={slideRight} />
         </div>
     );
 };
