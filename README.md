@@ -34,6 +34,8 @@
 
 ![Main Page error](public/images/screenshot_3.png)
 
+-   All cities are stored in browser's local storage, if you will refresh the page all not deleted cities will reappear
+
 ## Device support
 
 -   The application also available for mobile devices

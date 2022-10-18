@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ErrorMessages from '../errorMessages/ErrorMessages';
 import ScrollableCityCards from '../scrollableCityCards/ScrollableCityCards';
 import './MainPage.css';
 
-const API_KEY = 'kwchDVxQ0XIXcxfHnQ1WAadF24WvGyfR';
+const API_KEY = 'YNWfMVz4kNRfOefgH8PGfAFs8NJn9npE';
 
 const LOCATION_KEY_API =
     'https://dataservice.accuweather.com/locations/v1/cities/search';
@@ -17,6 +17,19 @@ const MainPage = () => {
     const [locationKeyError, setLocationKeyError] = useState(false);
     const [otherError, setOtherError] = useState(false);
     const [duplicateCitiesError, setDuplicateCitiesError] = useState(false);
+
+    useEffect(() => {
+        if (data.length === 0) {
+            const item = localStorage.getItem('weather_data');
+            setData(JSON.parse(item));
+        }
+    }, []);
+
+    useEffect(() => {
+        if (data.length !== 0) {
+            localStorage.setItem('weather_data', JSON.stringify(data));
+        }
+    }, [data]);
 
     const getLocationKeyFromAPI = () => {
         return fetch(LOCATION_KEY_API + '?apikey=' + API_KEY + '&q=' + cityName)
@@ -34,7 +47,6 @@ const MainPage = () => {
             .then((responseData) => {
                 setOtherError(false);
                 setDuplicateCitiesError(false);
-                console.log(responseData);
                 return responseData.DailyForecasts[0];
             })
             .catch(() => setOtherError(true));
