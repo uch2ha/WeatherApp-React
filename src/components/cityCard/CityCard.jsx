@@ -91,50 +91,53 @@ const CityCard = ({ city, day, night, temperature, deleteCity, id }) => {
     const [isDayData, setIsDayData] = useState(true);
 
     const fromFtoC = (F) => {
-        return ((F - 32) * 5) / 9;
-    };
-
-    const getAvgTemperature = (F1, F2) => {
-        return ((fromFtoC(F1) + fromFtoC(F2)) / 2).toFixed(0);
+        return (((F - 32) * 5) / 9).toFixed(0);
     };
 
     return (
-        <div
-            className='card-container'
-            onClick={() => setIsDayData((prev) => !prev)}
-        >
-            <p className='city-name'>{city}</p>
-            {isDayData ? (
-                <p className='day-night-title'>Day</p>
-            ) : (
-                <p className='day-night-title'>Night</p>
-            )}
-
-            <p className='temperature'>
-                {getAvgTemperature(
-                    temperature.Maximum.Value,
-                    temperature.Minimum.Value
+        <div className='card-container'>
+            <div
+                className={[
+                    'flipped-container',
+                    isDayData ? 'day' : 'night',
+                ].join(' ')}
+                onClick={() => setIsDayData((prev) => !prev)}
+            >
+                <p className='city-name'>{city}</p>
+                {isDayData ? (
+                    <p className='day-night-title'>Day</p>
+                ) : (
+                    <p className='day-night-title'>Night</p>
                 )}
-                ° C
-            </p>
-            {isDayData ? (
-                <>
-                    <div className='img-container'>
-                        <img className='img' src={IMAGES[day.Icon - 1]} />
-                    </div>
-                </>
-            ) : (
-                <>
-                    <div className='img-container'>
-                        <img className='img' src={IMAGES[night.Icon - 1]} />
-                    </div>
-                </>
-            )}
-            {isDayData ? (
-                <p className='description'>{day?.IconPhrase}</p>
-            ) : (
-                <p className='description'>{night?.IconPhrase}</p>
-            )}
+                {isDayData ? (
+                    <p className='temperature'>
+                        {fromFtoC(temperature.Maximum.Value)}° C
+                    </p>
+                ) : (
+                    <p className='temperature'>
+                        {fromFtoC(temperature.Minimum.Value)}° C
+                    </p>
+                )}
+
+                {isDayData ? (
+                    <>
+                        <div className='img-container'>
+                            <img className='img' src={IMAGES[day.Icon - 1]} />
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <div className='img-container'>
+                            <img className='img' src={IMAGES[night.Icon - 1]} />
+                        </div>
+                    </>
+                )}
+                {isDayData ? (
+                    <p className='description'>{day?.IconPhrase}</p>
+                ) : (
+                    <p className='description'>{night?.IconPhrase}</p>
+                )}
+            </div>
             <button className='btn-delete' onClick={() => deleteCity(id)}>
                 <div className='btn-div'>
                     <GrClose />

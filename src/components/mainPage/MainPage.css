@@ -1,9 +1,12 @@
 .main-container {
     width: 100vw;
     height: 100vh;
-    background-color: #21d4fd;
-    background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
-
+    background: rgb(233, 219, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(233, 219, 255, 1) 0%,
+        rgba(205, 254, 254, 1) 72%
+    );
     display: flex;
     flex-direction: column;
     align-items: center;
