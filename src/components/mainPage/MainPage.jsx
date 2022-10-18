@@ -9,7 +9,7 @@ const LOCATION_KEY_API =
     'https://dataservice.accuweather.com/locations/v1/cities/search';
 
 const WEATHER_API =
-    'http://dataservice.accuweather.com/forecasts/v1/daily/1day/';
+    'https://dataservice.accuweather.com/forecasts/v1/daily/1day/';
 
 const MainPage = () => {
     const [data, setData] = useState([]);
