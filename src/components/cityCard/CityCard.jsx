@@ -39,6 +39,7 @@ import img42 from '../../assets/img/42.png';
 import img43 from '../../assets/img/43.png';
 import img44 from '../../assets/img/44.png';
 import { GrClose } from 'react-icons/gr';
+import { MdClose } from 'react-icons/md';
 
 const IMAGES = [
     img1,
@@ -140,7 +141,7 @@ const CityCard = ({ city, day, night, temperature, deleteCity, id }) => {
             </div>
             <button className='btn-delete' onClick={() => deleteCity(id)}>
                 <div className='btn-div'>
-                    <GrClose />
+                    <MdClose color='white' />
                 </div>
             </button>
         </div>

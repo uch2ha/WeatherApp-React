@@ -1,9 +1,12 @@
 .card-container {
     position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease-out;
     margin: 1rem;
 }
+
+.flipped-container:active {
+    transform: rotateY(180deg);
+}
+
 .flipped-container {
     min-width: 21rem;
     max-width: 21rem;
@@ -15,6 +18,8 @@
     border-radius: 15px;
     border: none;
     cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-out;
 }
 
 .day {
@@ -42,10 +47,6 @@
         rgba(2, 0, 36, 1) 15%,
         rgba(1, 148, 189, 1) 86%
     );
-}
-
-.card-container:active {
-    transform: rotateY(180deg);
 }
 
 .city-name {
@@ -93,8 +94,8 @@
 
 .btn-delete {
     position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
+    bottom: 0.75rem;
+    right: 9.5rem;
     background: transparent;
     border: none;
     font-size: 1.5rem;
@@ -107,8 +108,8 @@
     color: red;
     border: 0.1rem solid white;
     border-radius: 10px;
-    top: 0.65rem;
-    right: 0.65rem;
+    bottom: 0.65rem;
+    right: 9.4rem;
 }
 
 .btn-div {
