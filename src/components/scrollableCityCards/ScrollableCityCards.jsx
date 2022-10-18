@@ -6,17 +6,21 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 const ScrollableCityCards = ({ data, deleteCityFromData }) => {
     const slideLeft = () => {
         let slider = document.getElementById('scrollable');
-        slider.scrollLeft = slider.scrollLeft - 500;
+        slider.scrollLeft = slider.scrollLeft - 400;
     };
 
     const slideRight = () => {
         let slider = document.getElementById('scrollable');
-        slider.scrollLeft = slider.scrollLeft + 500;
+        slider.scrollLeft = slider.scrollLeft + 400;
     };
 
     return (
         <div className='scrollable-container'>
-            <MdChevronLeft size={40} onClick={slideLeft} />
+            <MdChevronLeft
+                className='arrow-btn'
+                size={50}
+                onClick={slideLeft}
+            />
             <div id='scrollable' className='cities-cards-container'>
                 {data.map((city) => (
                     <CityCard
@@ -30,7 +34,11 @@ const ScrollableCityCards = ({ data, deleteCityFromData }) => {
                     />
                 ))}
             </div>
-            <MdChevronRight size={40} onClick={slideRight} />
+            <MdChevronRight
+                className='arrow-btn'
+                size={50}
+                onClick={slideRight}
+            />
         </div>
     );
 };

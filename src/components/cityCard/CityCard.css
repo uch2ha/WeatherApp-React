@@ -1,62 +1,68 @@
 .card-container {
     background: blue;
-    min-width: 25rem;
+    min-width: 21rem;
     min-height: 40rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     margin: 1rem;
+    position: relative;
+    border-radius: 15px;
+    border: none;
 }
 
-.title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-}
-
-.title p {
+.city-name {
+    font-size: 3rem;
     margin: 1rem;
+    margin-left: 1.5rem;
     text-transform: capitalize;
     font-weight: bold;
 }
 
-.day-night {
+.day-night-title {
+    font-size: 2rem;
+    margin: 1rem;
+    margin-left: 1.5rem;
+    font-weight: bold;
+}
+
+.temperature {
+    font-size: 2rem;
+    margin: 1rem;
+    margin-left: 1.5rem;
+    font-weight: bold;
+}
+.img-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.day-night div {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.img {
+    width: 70%;
+    height: 70%;
 }
-.day-night div p {
+
+.description {
+    font-size: 2rem;
+    margin: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    font-weight: bold;
     white-space: normal;
+    min-height: 8rem;
 }
 
 .day-night-title {
     font-weight: 600;
 }
 
-.min-max {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.min-max div {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .btn {
-    position: relative;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }

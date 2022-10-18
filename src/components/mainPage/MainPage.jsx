@@ -79,6 +79,7 @@ const MainPage = () => {
                     value={cityName}
                     onChange={(e) => setCityName(e.target.value.toLowerCase())}
                     placeholder='Enter the city name'
+                    onKeyDown={(e) => e.key === 'Enter' && setCityWeatherData()}
                 />
                 <button onClick={() => setCityWeatherData()}>Find</button>
             </div>
