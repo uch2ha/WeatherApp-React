@@ -3,7 +3,7 @@ import ErrorMessages from '../errorMessages/ErrorMessages';
 import ScrollableCityCards from '../scrollableCityCards/ScrollableCityCards';
 import './MainPage.css';
 
-const API_KEY = 'YNWfMVz4kNRfOefgH8PGfAFs8NJn9npE';
+const API_KEY = '2Y2R69TYA0cgP68Jmxt7GAsDbtC2i6SF';
 
 const LOCATION_KEY_API =
     'https://dataservice.accuweather.com/locations/v1/cities/search';
