@@ -1,5 +1,7 @@
 ## Dmitry Sinyavskiy Weather App on ReactJS
 
+https://weather-app-dmitry-sinyavskiy.netlify.app/
+
 ### Installation
 
 1. Install NPM packages
