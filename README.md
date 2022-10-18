@@ -16,11 +16,11 @@
 
 ## Functionalities and Usage
 
-![Main Page](public/images/screenshot_1.png)
+![Main Page](public/images/Screenshot_1.png)
 
 -   Enter the city name to add it to the list of cities
 
-![Main Page with data](public/images/screenshot_2.png)
+![Main Page with data](public/images/Screenshot_2.png)
 
 -   You can add infinite number of cities
 
@@ -28,11 +28,11 @@
 
 -   If you click on the card, it will turn and you will see the night weather forecast for that city
 
-![Main Page list of cities](public/images/screenshot_4.png)
+![Main Page list of cities](public/images/Screenshot_4.png)
 
 -   If you will try to add a city that is already on the list or try to add a non-existent city, you will get an error message
 
-![Main Page error](public/images/screenshot_3.png)
+![Main Page error](public/images/Screenshot_3.png)
 
 ## Device support
 
@@ -40,11 +40,11 @@
 
 -   Tablets
 
-![Main Page tablet](public/images/screenshot_5.png)
+![Main Page tablet](public/images/Screenshot_5.png)
 
 -   Phones
 
-![Main Page phone](public/images/screenshot_6.png)
+![Main Page phone](public/images/Screenshot_6.png)
 
 ## Warning
 
