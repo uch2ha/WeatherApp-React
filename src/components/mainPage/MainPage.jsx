@@ -14,19 +14,21 @@ const WEATHER_API =
 const MainPage = () => {
     const [data, setData] = useState([]);
     const [cityName, setCityName] = useState('');
+    const [firstLoad, setFirstLoad] = useState(true);
     const [locationKeyError, setLocationKeyError] = useState(false);
     const [otherError, setOtherError] = useState(false);
     const [duplicateCitiesError, setDuplicateCitiesError] = useState(false);
 
     useEffect(() => {
-        if (data.length === 0) {
+        if (firstLoad) {
             const item = localStorage.getItem('weather_data');
             setData(JSON.parse(item));
+            setFirstLoad(false);
         }
-    }, []);
+    }, [data]);
 
     useEffect(() => {
-        if (data.length !== 0) {
+        if (!firstLoad) {
             localStorage.setItem('weather_data', JSON.stringify(data));
         }
     }, [data]);
