@@ -3,7 +3,7 @@ import ErrorMessages from '../errorMessages/ErrorMessages';
 import ScrollableCityCards from '../scrollableCityCards/ScrollableCityCards';
 import './MainPage.css';
 
-const API_KEY = '?apikey=ExIw1Hbp9pDy8DN7PdxLtPsTi8NYGGlS';
+const API_KEY = 'kwchDVxQ0XIXcxfHnQ1WAadF24WvGyfR';
 
 const LOCATION_KEY_API =
     'https://dataservice.accuweather.com/locations/v1/cities/search';
@@ -19,7 +19,7 @@ const MainPage = () => {
     const [duplicateCitiesError, setDuplicateCitiesError] = useState(false);
 
     const getLocationKeyFromAPI = () => {
-        return fetch(LOCATION_KEY_API + API_KEY + '&q=' + cityName)
+        return fetch(LOCATION_KEY_API + '?apikey=' + API_KEY + '&q=' + cityName)
             .then((response) => response.json())
             .then((responseData) => {
                 setLocationKeyError(false);
@@ -29,7 +29,7 @@ const MainPage = () => {
     };
 
     const getWeatherDataFromAPI = (key) => {
-        return fetch(WEATHER_API + key + API_KEY)
+        return fetch(WEATHER_API + key + '?apikey=' + API_KEY)
             .then((response) => response.json())
             .then((responseData) => {
                 setOtherError(false);
