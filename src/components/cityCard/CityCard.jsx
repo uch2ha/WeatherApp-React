@@ -27,7 +27,7 @@ const CityCard = ({ city, day, night, temperature, deleteCity, id }) => {
                 <img className='img' src={asd} />
             </div>
             <p className='description'>{day?.IconPhrase}</p>
-            <button className='btn' onClick={() => deleteCity(id)}>
+            <button className='btn-delete' onClick={() => deleteCity(id)}>
                 <GrClose />
             </button>
         </div>

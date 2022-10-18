@@ -76,12 +76,18 @@ const MainPage = () => {
             />
             <div className='search-bar'>
                 <input
+                    className='input-field'
                     value={cityName}
                     onChange={(e) => setCityName(e.target.value.toLowerCase())}
                     placeholder='Enter the city name'
                     onKeyDown={(e) => e.key === 'Enter' && setCityWeatherData()}
                 />
-                <button onClick={() => setCityWeatherData()}>Find</button>
+                <button
+                    className='btn-search'
+                    onClick={() => setCityWeatherData()}
+                >
+                    Search
+                </button>
             </div>
             {data?.length > 0 && (
                 <ScrollableCityCards

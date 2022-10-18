@@ -14,5 +14,27 @@
     display: flex;
     flex-direction: row;
     /* margin-bottom: 15rem; */
-    background: blue;
+}
+
+.input-field {
+    border: 2px solid red;
+    background: transparent;
+    font-size: 2rem;
+    padding: 0.75rem;
+    color: black;
+    margin-right: 1.5rem;
+    border-radius: 15px;
+}
+
+.input-field:focus {
+    outline: none;
+}
+
+.btn-search {
+    background-color: transparent;
+    border: 2px solid red;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    padding: 0.75rem;
+    cursor: pointer;
 }
