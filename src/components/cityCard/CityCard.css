@@ -10,8 +10,8 @@
 .flipped-container {
     min-width: 21rem;
     max-width: 21rem;
-    min-height: 40rem;
-    max-height: 40rem;
+    min-height: 35rem;
+    max-height: 35rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
