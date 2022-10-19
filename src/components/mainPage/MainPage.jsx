@@ -19,19 +19,21 @@ const MainPage = () => {
     const [otherError, setOtherError] = useState(false);
     const [duplicateCitiesError, setDuplicateCitiesError] = useState(false);
 
-    // useEffect(() => {
-    //     if (firstLoad) {
-    //         const item = localStorage.getItem('weather_data');
-    //         setData(JSON.parse(item));
-    //         setFirstLoad(false);
-    //     }
-    // }, [data, firstLoad]);
+    useEffect(() => {
+        if (firstLoad) {
+            const item = localStorage.getItem('weather_data');
+            if (item !== undefined) {
+                setData(JSON.parse(item));
+            }
+            setFirstLoad(false);
+        }
+    }, [data]);
 
-    // useEffect(() => {
-    //     if (!firstLoad) {
-    //         localStorage.setItem('weather_data', JSON.stringify(data));
-    //     }
-    // }, [data, firstLoad]);
+    useEffect(() => {
+        if (!firstLoad) {
+            localStorage.setItem('weather_data', JSON.stringify(data));
+        }
+    }, [data]);
 
     const getLocationKeyFromAPI = () => {
         return fetch(LOCATION_KEY_API + '?apikey=' + API_KEY + '&q=' + cityName)
@@ -73,7 +75,7 @@ const MainPage = () => {
             cityData['City'] = cityName;
 
             setData((prev) => {
-                if (prev === undefined) {
+                if (prev === undefined || prev === null) {
                     return [cityData];
                 }
                 return [...prev, cityData];
