@@ -35,10 +35,10 @@
 
 /* MEDIA PLATFORMS (EXTRA SMALL) */
 @media screen and (max-width: 385px) {
-    .arrow-btn {
-        display: none;
-    }
     .main-container {
-        height: 100%;
+        height: 125vh;
+    }
+    .input-field {
+        width: 80%;
     }
 }
