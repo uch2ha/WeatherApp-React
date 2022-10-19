@@ -1,5 +1,15 @@
+/* MEDIA PLATFORMS (LAPTOP) */
+@media screen and (max-width: 1500px) {
+    .main-container {
+        height: 125vh;
+    }
+}
+
 /* MEDIA PLATFORMS (MEDIUM) */
 @media screen and (max-width: 1024px) {
+    .main-container {
+        height: 100vh;
+    }
     .arrow-btn {
         font-size: 4rem;
     }
@@ -7,6 +17,9 @@
 
 /* MEDIA PLATFORMS (SMALL) */
 @media screen and (max-width: 600px) {
+    .main-container {
+        height: 100vh;
+    }
     .arrow-btn {
         display: none;
     }
