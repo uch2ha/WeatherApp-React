@@ -8,10 +8,10 @@
 }
 
 .flipped-container {
-    min-width: 21rem;
-    max-width: 21rem;
-    min-height: 40rem;
-    max-height: 40rem;
+    min-width: 19rem;
+    max-width: 19rem;
+    min-height: 35rem;
+    max-height: 35rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -95,7 +95,7 @@
 .btn-delete {
     position: absolute;
     bottom: 0.75rem;
-    right: 9.5rem;
+    right: 8.5rem;
     background: transparent;
     border: none;
     font-size: 1.5rem;
