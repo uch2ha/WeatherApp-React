@@ -112,24 +112,27 @@ const CityCard = ({ city, day, night, temperature, deleteCity, id }) => {
                 )}
                 {isDayData ? (
                     <p className='temperature'>
-                        {fromFtoC(temperature.Maximum.Value)}° C
+                        {fromFtoC(temperature?.Maximum.Value)}° C
                     </p>
                 ) : (
                     <p className='temperature'>
-                        {fromFtoC(temperature.Minimum.Value)}° C
+                        {fromFtoC(temperature?.Minimum.Value)}° C
                     </p>
                 )}
 
                 {isDayData ? (
                     <>
                         <div className='img-container'>
-                            <img className='img' src={IMAGES[day.Icon - 1]} />
+                            <img className='img' src={IMAGES[day?.Icon - 1]} />
                         </div>
                     </>
                 ) : (
                     <>
                         <div className='img-container'>
-                            <img className='img' src={IMAGES[night.Icon - 1]} />
+                            <img
+                                className='img'
+                                src={IMAGES[night?.Icon - 1]}
+                            />
                         </div>
                     </>
                 )}

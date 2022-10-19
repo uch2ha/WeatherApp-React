@@ -25,13 +25,13 @@ const MainPage = () => {
             setData(JSON.parse(item));
             setFirstLoad(false);
         }
-    }, [data]);
+    }, [data, firstLoad]);
 
     useEffect(() => {
         if (!firstLoad) {
             localStorage.setItem('weather_data', JSON.stringify(data));
         }
-    }, [data]);
+    }, [data, firstLoad]);
 
     const getLocationKeyFromAPI = () => {
         return fetch(LOCATION_KEY_API + '?apikey=' + API_KEY + '&q=' + cityName)
@@ -69,9 +69,9 @@ const MainPage = () => {
         }
 
         if (cityData) {
-            cityData['id'] = Date.now(); // add id to each element  in the array
+            cityData['id'] = Date.now(); // add id to each element in the array
             cityData['City'] = cityName;
-            await setData((prev) => [...prev, cityData]);
+            setData((prev) => [...prev, cityData]);
             setCityName('');
         }
     };
