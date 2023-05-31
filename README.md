@@ -1,6 +1,6 @@
 ## Dmitry Sinyavskiy Weather App on ReactJS
 
-https://weather-app-dmitry-sinyavskiy.netlify.app/
+https://city-weather-uch2ha.netlify.app
 
 ### Installation
 
