@@ -18,7 +18,7 @@ https://city-weather-uch2ha.netlify.app
 
 ## Functionalities and Usage
 
-![Main Page](public/images/Screenshot_1.png)
+![Main Page 1](public/images/Screenshot_1.png)
 
 -   Enter the city name to add it to the list of cities
 
